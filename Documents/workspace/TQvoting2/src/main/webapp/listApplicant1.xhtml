@@ -1,0 +1,65 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:c="http://java.sun.com/jsp/jstl/core">
+ 
+ <h:head>
+<link href="/TQvoting2/resources/styles/bootstrap.css" rel="stylesheet"/>
+<link href="/TQvoting2/resources/styles/main.css" rel="stylesheet"/> </h:head>   
+ <h:body>
+ 
+    <h:form>
+	    <h:messages style="color:red"/>
+		<h:dataTable value="#{applicantServiceBean.applicants}" var="applicant">
+			<h:column>
+				<f:facet name="header">ID</f:facet>
+				<h:outputText value="#{applicant.id}"/>
+			</h:column>
+			<h:column>
+				<f:facet name="header">Name</f:facet>
+				<h:outputText value="#{applicant.name}"/>
+			</h:column>
+			<h:column>
+				<f:facet name="header">Song</f:facet>
+				<h:outputText value="#{applicant.song}"/>
+			</h:column>
+			<h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Action" />
+                        </f:facet>
+                        <h:link styleClass="btn" outcome="judge1.xhtml?id=#{applicant.id}">
+                            <f:param name="id" value="#{applicant.id}" />
+                            <span class="glyphicon glyphicon-edit"></span>
+                        </h:link>
+                    </h:column>
+			<h:column>
+				<f:facet name="header">Techniques in Performance (45 marks)</f:facet>
+				<h:outputText value="#{applicant.technique1}"/>
+			</h:column>
+			<h:column>
+				<f:facet name="header">Personality or Teamwork (35 marks)</f:facet>
+				<h:outputText value="#{applicant.personality1}"/>
+			</h:column>
+			<h:column>
+				<f:facet name="header">Stage Presence (20 marks)</f:facet>
+				<h:outputText value="#{applicant.stage1}"/>
+			</h:column>
+			<h:column>
+				<f:facet name="header">Techniques in Performance (45 marks)</f:facet>
+				<h:outputText value="#{applicant.technique2}"/>
+			</h:column>
+			<h:column>
+				<f:facet name="header">Personality or Teamwork (35 marks)</f:facet>
+				<h:outputText value="#{applicant.personality2}"/>
+			</h:column>
+			<h:column>
+				<f:facet name="header">Stage Presence (20 marks)</f:facet>
+				<h:outputText value="#{applicant.stage2}"/>
+			</h:column>
+			        
+		</h:dataTable>
+	</h:form>
+ 
+ </h:body>
+ 	
+</html>

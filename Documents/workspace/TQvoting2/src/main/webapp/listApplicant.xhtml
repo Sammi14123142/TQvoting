@@ -1,0 +1,53 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:rich="http://richfaces.org/rich">
+ 
+<h:head>
+  <link href="/TQvoting2/resources/styles/bootstrap.css" rel="stylesheet"/>
+  <link href="/TQvoting2/resources/styles/main.css" rel="stylesheet"/>
+</h:head>   
+
+<h:body>
+<!-- Page Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8">
+    <h:link outcome="board.xhtml">
+      <h1 class="page-header">Artist</h1>
+    </h:link> 
+
+    <rich:panel>
+      <h:form id="form">
+        <rich:dataGrid value="#{applicantServiceBean.applicants}" var="applicant" columns="1" elements="1">
+          <rich:panel bodyClass="pbody">
+            <h:panelGrid columns="1">
+              <h:outputText value="ID" styleClass="label"></h:outputText>
+              <h:outputText value="#{applicant.id}" styleClass="value"/>
+
+
+              <h:outputText value="Name" styleClass="label"/> 
+              <h:outputText value="#{applicant.name}" styleClass="value"/>
+
+
+              <h:outputText value="Performance" styleClass="label"></h:outputText>
+              <h:outputText value="#{applicant.song}" styleClass="value"/>
+            </h:panelGrid>
+          </rich:panel>
+          <f:facet name="footer">
+            <rich:dataScroller fastStep="3"/>
+          </f:facet>
+        </rich:dataGrid>
+      </h:form>
+    </rich:panel>                       
+    </div> 
+  </div> <!-- row -->
+</div> <!-- /.container -->
+
+</h:body>
+
+  <script src="/TQvoting2/resources/javascripts/jquery-1.11.0.js"></script>
+  <script src="/TQvoting2/resources/javascripts/bootstrap.js"></script>
+  <script src="/TQvoting2/resources/app/main.js"></script>	
+
+</html>

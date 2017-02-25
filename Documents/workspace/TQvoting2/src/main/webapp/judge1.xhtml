@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+    xmlns:c="http://java.sun.com/jsp/jstl/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:a4j="http://richfaces.org/a4j"
+    xmlns:rich="http://richfaces.org/rich">
+ 
+<h:head>
+    <link href="/TQvoting2/resources/styles/bootstrap.css" rel="stylesheet"/>
+    <link href="/TQvoting2/resources/styles/main.css" rel="stylesheet"/>
+</h:head>
+
+<h:body>
+    <f:metadata>
+        <f:viewParam name="id" value="#{applicantServiceBean.id}" />
+        <f:event type="preRenderView" listener="#{applicantServiceBean.findApplicantById()}"/>
+    </f:metadata>
+
+<div class="container">
+    <h:form id="editScore1"
+        styleClass="form-horizontal"
+        p:role="form">
+        <h:inputHidden value="${applicantServiceBean.id}" />
+        <div class="form-group">
+            <h:outputLabel for="name" class="col-sm-3 control-label">Id</h:outputLabel>
+            <div class="col-sm-9">
+                <h:inputText class="form-control"
+                 value="#{applicantServiceBean.applicant.id}"
+                 id="id" placeholder="Id"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h:outputLabel for="name" class="col-sm-3 control-label">Name</h:outputLabel>
+            <div class="col-sm-9">
+                <h:inputText class="form-control"
+                 value="#{applicantServiceBean.applicant.name}"
+                 id="name" placeholder="Name"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h:outputLabel for="song" class="col-sm-3 control-label">Song</h:outputLabel>
+            <div class="col-sm-9">
+            <h:inputText class="form-control"
+             value="#{applicantServiceBean.applicant.song}"
+                 id="song" placeholder="Song name"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h:outputLabel for="technique1" class="col-sm-3 control-label">Techniques in Performance</h:outputLabel>
+            <div class="col-sm-9">
+            <h:inputText class="form-control"
+             value="#{applicantServiceBean.applicant.technique1}"
+                 id="technique1" placeholder="(45 marks)"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h:outputLabel for="personality1" class="col-sm-3 control-label">Personality or Teamwork</h:outputLabel>
+            <div class="col-sm-9">
+            <h:inputText class="form-control"
+             value="#{applicantServiceBean.applicant.personality1}"
+                 id="personality1" placeholder="(35 marks)"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h:outputLabel for="stage1" class="col-sm-3 control-label">Stage Presence</h:outputLabel>
+            <div class="col-sm-9">
+            <h:inputText class="form-control"
+             value="#{applicantServiceBean.applicant.stage1}"
+                 id="stage1" placeholder="(20 marks)"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h:outputLabel for="score1" class="col-sm-3 control-label">Techniques in Performance</h:outputLabel>
+            <div class="col-sm-9">
+            <h:inputText class="form-control"
+             value="#{applicantServiceBean.applicant.technique2}"
+                 id="technique2" placeholder="(45 marks)"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h:outputLabel for="score1" class="col-sm-3 control-label">Personality or Teamwork</h:outputLabel>
+            <div class="col-sm-9">
+            <h:inputText class="form-control"
+             value="#{applicantServiceBean.applicant.personality2}"
+                 id="personality2" placeholder="(35 marks)"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h:outputLabel for="score1" class="col-sm-3 control-label">Stage Presence</h:outputLabel>
+            <div class="col-sm-9">
+            <h:inputText class="form-control"
+             value="#{applicantServiceBean.applicant.stage2}"
+                 id="stage2" placeholder="(20 marks)"/>
+            </div>
+        </div>
+
+        <h:commandButton styleClass="btn btn-primary"
+            action="#{applicantServiceBean.editScore1()}"
+            value="Submit" />
+            
+    </h:form> 
+</div>                       
+</h:body>
+</html>

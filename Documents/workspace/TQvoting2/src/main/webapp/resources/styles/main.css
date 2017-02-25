@@ -1,0 +1,71 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+body {
+  background-image: url(../images/listApplicant-bg.jpg);
+  background-size: 100% 100%;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+	font-size: 72px;
+	color: #ffcc33;
+	font-weight: 500;
+}
+
+.label {
+    font-size: 36px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+.value {
+    font-size: 36px;
+	margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 20;
+    margin-right: 0;
+    font-weight: lighter;
+}
+
+.order-table{
+	border-collapse:collapse;
+	font-size: 22px;
+	width: 100%;
+}
+
+.order-table-header{
+	text-align:center;
+	border-bottom:1px solid #BBBBBB;
+	padding:18px;
+}
+
+.order-table-odd-row{
+	text-align:center;
+	border-top:1px solid #BBBBBB;
+ 	height: 60px;
+}
+
+.order-table-even-row{
+	text-align:center;
+	border-top:1px solid #BBBBBB;
+ 	height: 60px;
+}
+
+.rf-p {
+	background-color: transparent;
+	border: 0 !important;
+}
+
+.rf-dg {
+	background-color: transparent;
+	font-size: 36px;
+	width: 100%;
+	height: 490px;
+]}
+

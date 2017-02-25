@@ -1,0 +1,53 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+    <link href="/TQvoting2/resources/styles/bootstrap.css" rel="stylesheet"/>
+    <link href="/TQvoting2/resources/styles/main.css" rel="stylesheet"/>
+</h:head> 
+
+<h:body> 
+<div class="container">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h:link outcome="listApplicant.xhtml">
+                <h1 class="page-header">Current Ranking</h1>
+            </h:link>
+        </div>
+        <div class="col-lg-8">
+            <h:form>
+                <h:dataTable value="#{applicantServiceBean.applicantsOrdered}" var="applicant" styleClass="order-table"
+                headerClass="order-table-header"
+                rowClasses="order-table-odd-row,order-table-even-row">
+                    <h:column>
+                    <f:facet name="header">ID</f:facet>
+                    <h:outputText value="#{applicant.id}"/>
+                    </h:column>
+
+                    <h:column>
+                    <f:facet name="header">Name</f:facet>
+                    <h:outputText value="#{applicant.name}"/>
+                    </h:column>
+
+                    <h:column>
+                    <f:facet name="header">Performance</f:facet>
+                    <h:outputText value="#{applicant.song}"/>
+                    </h:column>
+
+                    <h:column>
+                    <f:facet name="header">Final Score (200 marks)</f:facet>
+                    <h:outputText value="#{applicant.technique1+applicant.technique2+applicant.personality1+applicant.personality2+applicant.stage1+applicant.stage2}"/>
+                    </h:column>
+                    
+                </h:dataTable>
+            </h:form>                   
+        </div>
+    </div> <!-- /.row -->
+</div> <!-- /.container -->
+</h:body> 
+    <script src="/TQvoting2/resources/javascripts/jquery-1.11.0.js"></script>
+    <script src="/TQvoting2/resources/javascripts/bootstrap.js"></script>
+    <script src="/TQvoting2/resources/app/main.js"></script>	
+</html>

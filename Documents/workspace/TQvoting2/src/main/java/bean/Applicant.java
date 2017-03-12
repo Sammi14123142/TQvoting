@@ -17,6 +17,8 @@ import javax.validation.constraints.NotNull;
 @NamedQueries({
 	@NamedQuery(name="Applicant.findAllOrderByScore",
 			query = "select c from Applicant c group by c.name order by c.technique1+c.technique2+c.personality1+c.personality2+c.stage1+c.stage2 desc"),
+	@NamedQuery(name="Applicant.findPopular",
+	query = "select c from Applicant c group by c.name order by c.finalScore desc"),
 	@NamedQuery(name="Applicant.findAll",
 	query = "select c from Applicant c"),
 	@NamedQuery(name="Applicant.findById",

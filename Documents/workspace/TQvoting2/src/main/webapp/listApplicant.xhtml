@@ -13,18 +13,18 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-8">
-    <h:link outcome="board.xhtml">
-      <h1 class="page-header">Artist</h1>
+    <h:link outcome="guestPerformer.xhtml">
+      <h1 class="page-header">Hall Talents</h1>
     </h:link> 
 
     <rich:panel>
       <h:form id="form">
         <rich:dataGrid value="#{applicantServiceBean.applicants}" var="applicant" columns="1" elements="1">
           <rich:panel bodyClass="pbody">
-            <h:panelGrid columns="1">
-              <h:outputText value="ID" styleClass="label"></h:outputText>
+            <h:panelGrid columns="2">
+              
+			  <h:outputText value="ID" styleClass="label"></h:outputText>
               <h:outputText value="#{applicant.id}" styleClass="value"/>
-
 
               <h:outputText value="Name" styleClass="label"/> 
               <h:outputText value="#{applicant.name}" styleClass="value"/>
@@ -32,6 +32,8 @@
 
               <h:outputText value="Performance" styleClass="label"></h:outputText>
               <h:outputText value="#{applicant.song}" styleClass="value"/>
+              
+              
             </h:panelGrid>
           </rich:panel>
           <f:facet name="footer">
@@ -39,8 +41,27 @@
           </f:facet>
         </rich:dataGrid>
       </h:form>
-    </rich:panel>                       
-    </div> 
+    </rich:panel> 
+    <p style="color:black" data-toggle="modal" data-target="#session">Session break</p>                      
+    </div>
+    
+    <!-- Modal -->
+<div id="session" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="value">Talent Quest</h4>
+      </div>
+      <div class="modal-body">
+        <h1>Coming back soon</h1>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary btn-lg center-block" data-dismiss="modal" aria-hidden="true">Close</button>
+      </div>
+    </div>
+  </div>
+</div>  
   </div> <!-- row -->
 </div> <!-- /.container -->
 

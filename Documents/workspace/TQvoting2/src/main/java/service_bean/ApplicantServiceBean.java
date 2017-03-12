@@ -67,6 +67,10 @@ public class ApplicantServiceBean {
 		return applicantService.getApplicantsOrdered();
 	}
 	
+	public List<Applicant> getPopular() {
+		return applicantService.getPopular();
+	}
+	
 	public String editScore1() {
         applicantService.update(applicant);
         System.out.println(applicant);

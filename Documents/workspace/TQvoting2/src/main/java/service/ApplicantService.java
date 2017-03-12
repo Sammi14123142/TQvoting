@@ -26,6 +26,14 @@ public class ApplicantService {
         return ApplicantsOrdered;
 	}
 	
+	public List<Applicant> getPopular() {
+		EntityManager em = factory.createEntityManager();
+        Query query = em.createNamedQuery(
+            "Applicant.findPopular");
+        List<Applicant> Popular = query.getResultList();
+        return Popular;
+	}
+	
 	public List<Applicant> getApplicants() {
 		EntityManager em = factory.createEntityManager();
         Query query = em.createNamedQuery(

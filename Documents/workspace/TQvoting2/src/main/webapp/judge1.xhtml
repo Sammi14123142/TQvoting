@@ -106,6 +106,14 @@
                  id="stage2" placeholder="(20 marks)"/>
             </div>
         </div>
+        <div class="form-group">
+            <h:outputLabel for="finalScore" class="col-sm-3 control-label">Votes</h:outputLabel>
+            <div class="col-sm-9">
+            <h:inputText class="form-control"
+             value="#{applicantServiceBean.applicant.finalScore}"
+                 id="finalScore" placeholder="(20 marks)"/>
+            </div>
+        </div>
 
         <h:commandButton styleClass="btn btn-primary"
             action="#{applicantServiceBean.editScore1()}"

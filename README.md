@@ -31,3 +31,7 @@ Immediate validation is executed while entering scores.
 4. RichFaces
 
 rich:panel is used to display performers information.
+
+5. Unit test
+
+JUnit is used. Each unit test is meant to test a method in a class.

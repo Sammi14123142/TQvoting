@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:rich="http://richfaces.org/rich"
+    xmlns:a4j="http://richfaces.org/a4j">
+
+<ui:composition template="/WEB-INF/templates/Basic.xhtml">
+	<ui:define name="session">Final Ranking</ui:define>
+	<ui:define name="content">
+<table class="resultTable">
+  <tr>
+<th class="value" id="champion" data-toggle="modal" data-target="#championModal">Champion:</th><td class="hidden" id="championName">#{applicantServiceBean.applicantsOrdered[0].name}</td>
+  </tr>
+  <tr>
+<th class="value" id="first" data-toggle="modal" data-target="#firstModal">First Runner-up:</th><td class="hidden" id="firstName">#{applicantServiceBean.applicantsOrdered[1].name}</td>
+  </tr>
+  <tr>
+<th class="value" id="second" data-toggle="modal" data-target="#secondModal">Second Runner-up:</th><td class="hidden" id="secondName">#{applicantServiceBean.applicantsOrdered[2].name}</td>
+  </tr>
+ <tr>
+ <th class="value" id="popular" data-toggle="modal" data-target="#popularModal">Best personal/Team style award:</th><td class="hidden" id="popularName">#{applicantServiceBean.popular[0].name}</td>
+ </tr>
+</table>
+
+<!-- Modal -->
+<div id="championModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="value">Champion</h4>
+      </div>
+      <div class="modal-body">
+        <h1>#{applicantServiceBean.applicantsOrdered[0].name}</h1>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary btn-lg center-block" data-dismiss="modal" aria-hidden="true">Close</button>
+      </div>
+    </div>
+  </div>
+</div> 
+<div id="firstModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="value">First Runner-up</h4>
+      </div>
+      <div class="modal-body">
+        <h1>#{applicantServiceBean.applicantsOrdered[1].name}</h1>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary btn-lg center-block" data-dismiss="modal" aria-hidden="true">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="secondModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="value">Second Runner-up</h4>
+      </div>
+      <div class="modal-body">
+        <h1>#{applicantServiceBean.applicantsOrdered[2].name}</h1>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary btn-lg center-block" data-dismiss="modal" aria-hidden="true">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="popularModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="value">Best personal/Team style award</h4>
+      </div>
+      <div class="modal-body">
+        <h1>#{applicantServiceBean.popular[0].name}</h1>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary btn-lg center-block" data-dismiss="modal" aria-hidden="true">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modals end  -->   
+	</ui:define>
+
+</ui:composition>
+
+</html>

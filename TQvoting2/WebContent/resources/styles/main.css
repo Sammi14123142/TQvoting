@@ -1,0 +1,261 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+body {
+  background-image: url(/TQvoting2/resources/images/listApplicant-bg.jpg);
+  height: 100%;
+  background-size: cover;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+	font-size: 72px;
+	color: #ffcc33;
+	font-weight: 500;
+}
+
+a {
+    text-decoration: inherit;
+}
+
+a:hover, a:active {
+    text-decoration: none;
+}
+
+.content
+{
+    margin-top: 50px;
+    color: #fff;
+}
+.logo img
+{
+    display: inline-block;
+}
+h2
+{
+    font-family: 'Lobster', cursive;
+    font-size: 48px;
+    padding-top: 80px;
+    color: #fff;
+}
+
+h1
+{
+    font-size: 72px;
+    color: #ffcc33;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+}
+
+.logo h1 a
+{
+    font-size: 72px;
+    color: #ffcc33;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+}
+
+#countdown {
+    text-align: center;
+    margin:  110px 0px 69px;
+    min-height: 104px;
+}
+#countdown > div {
+    width: 100px;
+    height: 100px;
+    margin: 0px 1%;
+    display: inline-block;
+    font-size: 20px;
+    line-height: 52px;
+    position: relative;
+    font-weight: 700;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+#countdown > div > span
+{
+    display: block;
+}
+
+.label {
+    font-size: 36px;
+    margin-top: 1em;
+    margin-bottom: 36px;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+.value {
+    font-size: 36px;
+	margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 20;
+    margin-right: 0;
+    font-weight: lighter;
+}
+
+.order-table{
+	border-collapse:collapse;
+	font-size: 22px;
+	width: 100%;
+}
+
+.order-table-header{
+	text-align:center;
+	border-bottom:1px solid #BBBBBB;
+	padding:18px;
+}
+
+.order-table-odd-row{
+	text-align:center;
+	border-top:1px solid #BBBBBB;
+ 	height: 60px;
+}
+
+.order-table-even-row{
+	text-align:center;
+	border-top:1px solid #BBBBBB;
+ 	height: 60px;
+}
+
+.rf-p {
+	background-color: transparent;
+	border: 0 !important;
+}
+
+.rf-dg {
+	background-color: transparent;
+	font-size: 36px;
+	width: 100%;
+	height: 490px;
+]}
+
+div.pbody table {
+	border-collapse: separate;
+    border-spacing: 10px 50px;
+    width: 100%;
+}
+
+#guest {
+	font-family: 'Lobster', cursive;
+	font-size: 96px;
+    padding-top: 100px;
+}
+
+.hidden {
+	display: none;
+}
+
+.modal-content {
+	background-color: #1d1d1d;
+}
+
+.modal-body {
+	height: 400px;
+	text-align:center;
+	vertical-align:center;
+}
+
+.modal-body h1 {
+    text-align:center;
+    vertical-align:center;
+    font-size: 132px;
+    color: #ffcc33;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+}
+
+.modal-footer a {
+    text-decoration:none;
+    color:white;
+}
+
+.btn-default {
+    border-color: #fff;
+    color: #222;
+    background-color: #fff;
+    -webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    transition: all .35s;
+}
+
+.btn-default:hover,
+.btn-default:focus,
+.btn-default.focus,
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+    border-color: #ededed;
+    color: #222;
+    background-color: #f2f2f2;
+    opacity: 0.7;
+}
+
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+    background-image: none;
+}
+
+.btn-default.disabled,
+.btn-default[disabled],
+fieldset[disabled] .btn-default,
+.btn-default.disabled:hover,
+.btn-default[disabled]:hover,
+fieldset[disabled] .btn-default:hover,
+.btn-default.disabled:focus,
+.btn-default[disabled]:focus,
+fieldset[disabled] .btn-default:focus,
+.btn-default.disabled.focus,
+.btn-default[disabled].focus,
+fieldset[disabled] .btn-default.focus,
+.btn-default.disabled:active,
+.btn-default[disabled]:active,
+fieldset[disabled] .btn-default:active,
+.btn-default.disabled.active,
+.btn-default[disabled].active,
+fieldset[disabled] .btn-default.active {
+    border-color: #fff;
+    background-color: #fff;
+    opacity: 0.7;
+}
+
+.btn-default .badge {
+    color: #fff;
+    background-color: #222;
+}
+
+.btn.btn-primary {
+    background-color: transparent;
+    border:1px solid #f0f0f0;
+    border-color:#f0f0f0;
+    -webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    transition: all .35s;
+}
+
+.btn.btn-primary:hover {
+    opacity: 0.7;
+}
+
+.btn {
+    border: 0;
+    border-radius: 290px;
+    font-family: 'Helvetica Neue',Arial,sans-serif;
+}
+
+.btn-xl {
+    padding: 15px 30px;
+    font-size: 20px;
+}
+
+table.resultTable {
+    border-collapse: separate;
+    border-spacing: 10px 50px;
+    width: 100%;
+}

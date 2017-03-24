@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+ 
+<h:head>
+    <link href="/TQvoting2/resources/styles/bootstrap.css" rel="stylesheet"/>
+    <link href="/TQvoting2/resources/styles/main.css" rel="stylesheet"/>
+</h:head>
+
+<h:body>
+    <f:metadata>
+        <f:viewParam name="id" value="#{applicantServiceBean.id}" />
+        <f:event type="preRenderView" listener="#{applicantServiceBean.findApplicantById()}"/>
+    </f:metadata>
+
+<div class="container">
+    <h:form id="editScore"
+        styleClass="form-horizontal"
+        p:role="form">
+        <h:inputHidden value="${applicantServiceBean.id}" />
+        <div class="form-group">
+            <h:outputLabel for="name" class="col-sm-3 control-label">Id</h:outputLabel>
+            <div class="col-sm-9">
+                <h:inputText class="form-control"
+                 value="#{applicantServiceBean.applicant.id}"
+                 id="id" placeholder="Id"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h:outputLabel for="name" class="col-sm-3 control-label">Name</h:outputLabel>
+            <div class="col-sm-9">
+                <h:inputText class="form-control"
+                 value="#{applicantServiceBean.applicant.name}"
+                 id="name" placeholder="Name"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h:outputLabel for="song" class="col-sm-3 control-label">Song</h:outputLabel>
+            <div class="col-sm-9">
+            <h:inputText class="form-control"
+             value="#{applicantServiceBean.applicant.song}"
+                 id="song" placeholder="Song name"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h:outputLabel for="technique" class="col-sm-3 control-label">Techniques in Performance</h:outputLabel>
+            <div class="col-sm-9">
+            <h:inputText class="form-control"
+             	value="#{applicantServiceBean.applicant.technique}"
+             	validatorMessage="Score need to be a number less than 45 marks"
+                id="technique" placeholder="(45 marks)">
+            	<f:validateRequired />
+            	<f:validateLongRange maximum="45"/>
+            	<f:ajax event="blur" render="techniqueError"></f:ajax>
+            </h:inputText>
+            <h:messages id="techniqueError" for="technique" styleClass="alert validation-error"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h:outputLabel for="personality" class="col-sm-3 control-label">Personality or Teamwork</h:outputLabel>
+            <div class="col-sm-9">
+            <h:inputText class="form-control"
+             value="#{applicantServiceBean.applicant.personality}"
+                 id="personality" placeholder="(35 marks)"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h:outputLabel for="stage" class="col-sm-3 control-label">Stage Presence</h:outputLabel>
+            <div class="col-sm-9">
+            <h:inputText class="form-control"
+             value="#{applicantServiceBean.applicant.stage}"
+                 id="stage" placeholder="(20 marks)"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h:outputLabel for="vote" class="col-sm-3 control-label">Votes</h:outputLabel>
+            <div class="col-sm-9">
+            <h:inputText class="form-control"
+             value="#{applicantServiceBean.applicant.vote}"
+                 id="vote" placeholder="(20 marks)"/>
+            </div>
+        </div>
+
+        <h:commandButton styleClass="btn btn-primary"
+            action="#{applicantServiceBean.editScore()}"
+            value="Submit" />
+            
+    </h:form> 
+</div>                       
+</h:body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:rich="http://richfaces.org/rich"
+    xmlns:a4j="http://richfaces.org/a4j">
+
+<ui:composition template="/WEB-INF/templates/Basic.xhtml">
+	<ui:define name="session">Artists</ui:define>
+	<ui:define name="content">
+
+    <rich:panel>
+      <h:form id="form">
+        <rich:dataGrid value="#{applicantServiceBean.applicants}" var="applicant" columns="1" elements="1">
+          <rich:panel bodyClass="pbody">
+            <h:panelGrid columns="2">
+              
+			  <h:outputText value="ID" styleClass="label"></h:outputText>
+              <h:outputText value="#{applicant.id}" styleClass="value"/>
+
+              <h:outputText value="Name" styleClass="label"/> 
+              <h:outputText value="#{applicant.name}" styleClass="value"/>
+
+
+              <h:outputText value="Performance" styleClass="label"></h:outputText>
+              <h:outputText value="#{applicant.song}" styleClass="value"/>
+              
+              
+            </h:panelGrid>
+          </rich:panel>
+          <f:facet name="footer">
+            <rich:dataScroller fastStep="3"/>
+          </f:facet>
+        </rich:dataGrid>
+      </h:form>
+    </rich:panel> 
+    <p style="color:black" data-toggle="modal" data-target="#session">Session break</p>                      
+    
+    <!-- Modal -->
+<div id="session" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="value">Talent Quest</h4>
+      </div>
+      <div class="modal-body">
+        <h1>Coming back soon</h1>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary btn-lg center-block" data-dismiss="modal" aria-hidden="true">Close</button>
+      </div>
+    </div>
+  </div>
+</div>  
+</ui:define>
+</ui:composition>
+</html>

@@ -20,7 +20,7 @@ Templating files, BasicTemplate.xhtml and header.xhtml are located inside WEB-IN
 Composition pages are located in WebContent.
 The web.xml web descriptor specifies the Faces servlet and its servlet mappings.
 
-3. Ajax
+3. Ajax Validation
 
 Scores of each applicant consist of three parts, 
 Techniques in Performance (45 marks)
@@ -30,7 +30,8 @@ Immediate validation is executed while entering scores.
 
 4. RichFaces
 
-rich:panel is used to display performers information.
+* Client side validation using <rich:validator /> etc.
+* rich:panel is used to display performers information.
 
 5. Unit test
 

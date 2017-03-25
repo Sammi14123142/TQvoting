@@ -4,10 +4,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
     xmlns:h="http://java.sun.com/jsf/html"
     xmlns:f="http://java.sun.com/jsf/core"
-    xmlns:p="http://primefaces.org/ui">
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:rich="http://richfaces.org/rich"
+    xmlns:a4j="http://richfaces.org/a4j">
  
 <h:head>
-    <link href="/TQvoting2/resources/styles/bootstrap.css" rel="stylesheet"/>
+    <link href="/TQvoting2/resources/styles/bootstrap.min.css" rel="stylesheet"/>
     <link href="/TQvoting2/resources/styles/main.css" rel="stylesheet"/>
 </h:head>
 
@@ -22,74 +24,60 @@
         styleClass="form-horizontal"
         p:role="form">
         <h:inputHidden value="${applicantServiceBean.id}" />
-        <div class="form-group">
-            <h:outputLabel for="name" class="col-sm-3 control-label">Id</h:outputLabel>
-            <div class="col-sm-9">
-                <h:inputText class="form-control"
-                 value="#{applicantServiceBean.applicant.id}"
-                 id="id" placeholder="Id"/>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <h:outputLabel for="name" class="col-sm-3 control-label">Name</h:outputLabel>
-            <div class="col-sm-9">
-                <h:inputText class="form-control"
-                 value="#{applicantServiceBean.applicant.name}"
-                 id="name" placeholder="Name"/>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <h:outputLabel for="song" class="col-sm-3 control-label">Song</h:outputLabel>
-            <div class="col-sm-9">
-            <h:inputText class="form-control"
-             value="#{applicantServiceBean.applicant.song}"
-                 id="song" placeholder="Song name"/>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <h:outputLabel for="technique" class="col-sm-3 control-label">Techniques in Performance</h:outputLabel>
-            <div class="col-sm-9">
-            <h:inputText class="form-control"
-             	value="#{applicantServiceBean.applicant.technique}"
-             	validatorMessage="Score need to be a number less than 45 marks"
-                id="technique" placeholder="(45 marks)">
-            	<f:validateRequired />
-            	<f:validateLongRange maximum="45"/>
-            	<f:ajax event="blur" render="techniqueError"></f:ajax>
-            </h:inputText>
-            <h:messages id="techniqueError" for="technique" styleClass="alert validation-error"/>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <h:outputLabel for="personality" class="col-sm-3 control-label">Personality or Teamwork</h:outputLabel>
-            <div class="col-sm-9">
-            <h:inputText class="form-control"
-             value="#{applicantServiceBean.applicant.personality}"
-                 id="personality" placeholder="(35 marks)"/>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <h:outputLabel for="stage" class="col-sm-3 control-label">Stage Presence</h:outputLabel>
-            <div class="col-sm-9">
-            <h:inputText class="form-control"
-             value="#{applicantServiceBean.applicant.stage}"
-                 id="stage" placeholder="(20 marks)"/>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <h:outputLabel for="vote" class="col-sm-3 control-label">Votes</h:outputLabel>
-            <div class="col-sm-9">
-            <h:inputText class="form-control"
-             value="#{applicantServiceBean.applicant.vote}"
-                 id="vote" placeholder="(20 marks)"/>
-            </div>
-        </div>
+        <rich:panel>
+        	<f:facet name="header">
+        		<h:panelGroup>
+        			<h:outputText value="Scores Editing Page" />
+        			<a4j:status>
+        				<f:facet name="start">
+        				</f:facet>
+        			</a4j:status>
+        		</h:panelGroup>
+        	</f:facet>
+        	<h:panelGrid columns="3">
+        		<h:outputText value="Id:" />
+        		<h:inputText value="#{applicantServiceBean.applicant.id}" 
+        					id="id" placeholder="Id">
+        		</h:inputText>
+        		
+        		<h:outputText value="Name:" />
+        		<h:inputText value="#{applicantServiceBean.applicant.name}" 
+        					id="name" placeholder="name">
+        		</h:inputText>
+        		
+        		<h:outputText value="Song:" />
+        		<h:inputText value="#{applicantServiceBean.applicant.song}" 
+        					id="song" placeholder="song">
+        		</h:inputText>
+        		
+        		<h:outputText value="Techniques in Performance" />
+        		<h:inputText value="#{applicantServiceBean.applicant.technique}" 
+        					id="technique" placeholder="(45 marks)"
+        					validatorMessage="Score in techniques should be in the range 0~45">
+        			<f:validateLongRange minimum="0" maximum="45" />
+        			<rich:validator />
+        		</h:inputText>
+        		<rich:message for="technique"/>
+        		
+        		<h:outputText value="Personality or Teamwork" />
+        		<h:inputText value="#{applicantServiceBean.applicant.personality}" 
+        					id="personality" placeholder="(35 marks)"
+        					validatorMessage="Score in personality should be in the range 0~35">
+        			<f:validateLongRange minimum="0" maximum="35" />
+        			<rich:validator />
+        		</h:inputText>
+        		<rich:message for="personality" />
+        		
+        		<h:outputText value="" />
+        		<h:inputText value="#{applicantServiceBean.applicant.stage}" 
+        					id="stage" placeholder="(20 marks)"
+        					validatorMessage="Score in stage presence should be in the range 0~20">
+        			<f:validateLongRange minimum="0" maximum="20" />
+        			<rich:validator />
+        		</h:inputText>
+        		<rich:message for="stage" />
+        	</h:panelGrid>
+        </rich:panel>
 
         <h:commandButton styleClass="btn btn-primary"
             action="#{applicantServiceBean.editScore()}"
